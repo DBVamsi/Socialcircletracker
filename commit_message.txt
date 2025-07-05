@@ -1,0 +1,6 @@
+feat: Configure Vite base path for GitHub Pages deployment
+
+Adds the `base` option to `vite.config.js` to correctly handle
+deployments to a subfolder on GitHub Pages. This ensures that
+asset paths are generated correctly and client-side routing
+works as expected when the application is served from a subpath.
