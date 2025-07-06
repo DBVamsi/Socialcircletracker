@@ -17,7 +17,7 @@ const transporter = nodemailer.createTransport({
 
 exports.sendDailyReminders = functions.pubsub
     .schedule("every 24 hours")
-    .onRun(async (context) => {
+    .onRun(async (_context) => { // Renamed context to _context
       // 1. Get all users who have opted-in for email notifications
       const usersSnapshot = await db
           .collection("users")
@@ -67,7 +67,7 @@ exports.sendDailyReminders = functions.pubsub
             subject: "Your Social Circle Reminders",
             html: `
               <p>Hi ${user.displayName},</p>
-              <p>It\'s time to reconnect with:</p>
+              <p>It's time to reconnect with:</p>
               <ul>
                 ${overdueContacts.map((name) => `<li>${name}</li>`).join("")}
               </ul>

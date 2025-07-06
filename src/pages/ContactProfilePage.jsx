@@ -2,7 +2,7 @@
 // FILE: src/pages/ContactProfilePage.jsx
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc } from 'firebase/firestore'; // Removed getDoc
 import { db } from '../firebaseConfig';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import InteractionLog from '../components/InteractionLog';

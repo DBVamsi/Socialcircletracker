@@ -3,7 +3,7 @@
 import React from 'react';
 import { collection, query, where, orderBy } from 'firebase/firestore';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { db, auth } from '../firebaseConfig';
+import { db } from '../firebaseConfig'; // Removed auth
 import { format } from 'date-fns';
 
 const InteractionLog = ({ contactId }) => {
